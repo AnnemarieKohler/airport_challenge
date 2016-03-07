@@ -17,8 +17,8 @@ class Airport
     fail 'Airport full!' if full?
     fail "Stormy, can't land" if stormy?
     fail "Plane already landed" unless flying?
-    @at_airport << @plane
-    @at_airport.last
+    at_airport << plane
+    at_airport.last
 
 
   end
@@ -26,7 +26,7 @@ class Airport
   def depart(plane)
     fail "Stormy, can't depart" if stormy?
     fail "Plane already flying" if flying?
-    @at_airport.delete(plane)
+    at_airport.delete(plane)
   end
 
   private
@@ -36,7 +36,7 @@ class Airport
   end
 
   def stormy?
-    @weather.stormy?
+    weather.stormy?
   end
 
   def flying?
